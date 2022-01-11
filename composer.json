@@ -1,0 +1,42 @@
+{
+  "name": "atlaschan000/hyperf-period-limit",
+  "type": "library",
+  "description": "The hyperf's redis lua script for period limit",
+  "keywords": ["hyperf","redis","period"],
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "AtlasChan",
+      "email": "651906195@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "AtlasChan\\Hyperf\\PeriodLimit\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AtlasChanTest\\PeriodLimit\\": "tests/"
+    }
+  },
+  "require": {
+    "hyperf/redis": "^2.2"
+  },
+  "require-dev": {
+    "hyperf/di": "^2.2",
+    "hyperf/config": "^2.2",
+    "malukenho/docheader": "^0.1.6",
+    "mockery/mockery": "^1.0",
+    "phpunit/phpunit": "^8.0.0",
+    "friendsofphp/php-cs-fixer": "^2.9"
+  },
+  "scripts": {
+    "test": "./bin/co-phpunit --colors=always",
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+    "license-check": "docheader check src/ test/",
+    "cs-fix": "php-cs-fixer fix $1",
+    "json-fix": "./bin/composer-json-fixer",
+    "analyse": "phpstan analyse --memory-limit 4096M -l 5 -c phpstan.neon"
+  }
+}
